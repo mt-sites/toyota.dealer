@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Your Business Name</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#eef2f8;--card:#fff;--ink:#0f1f38;--muted:#4a5a75;--line:#d5deec;--brand:#1e3a5f;--brand-ink:#fff;--accent:#e3b55a;--accent-ink:#2a1d05;--tag:#1e3a5f;--h1:#4a7fb5;--h2:#1e3a5f;--h3:#6b9bc9;--sun:rgba(255,214,150,.5);--b1:#2b5f9e;--b2:#0f766e;--b3:#475569;--b4:#4f5fa8;--m1:#2b5f9e;--m2:#0f766e;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme]){--bg:#0b1220;--card:#141f33;--ink:#eaf0f8;--muted:#9fb0c8;--line:#22304a;--brand:#8fb8e8;--brand-ink:#08111f;--accent:#e3b55a;--accent-ink:#2a1d05;--tag:#8fb8e8;--h1:#1d3557;--h2:#0b1220;--h3:#164e63;--sun:rgba(100,170,220,.25);--b1:#3b78b8;--b2:#14877c;--b3:#5b6b85;--b4:#5f6fc0;--m1:#3b78b8;--m2:#14877c;}}
+:root[data-theme="dark"]{--bg:#0b1220;--card:#141f33;--ink:#eaf0f8;--muted:#9fb0c8;--line:#22304a;--brand:#8fb8e8;--brand-ink:#08111f;--accent:#e3b55a;--accent-ink:#2a1d05;--tag:#8fb8e8;--h1:#1d3557;--h2:#0b1220;--h3:#164e63;--sun:rgba(100,170,220,.25);--b1:#3b78b8;--b2:#14877c;--b3:#5b6b85;--b4:#5f6fc0;--m1:#3b78b8;--m2:#14877c;}
+:root[data-theme="copper"]{--bg:#1c0f0a;--card:#2a1710;--ink:#f7efe8;--muted:#c9b3a4;--line:#4a2c20;--brand:#d99a6c;--brand-ink:#2a1405;--accent:#e6c177;--accent-ink:#2a1d05;--tag:#d99a6c;--h1:#9a4a2a;--h2:#3b1710;--h3:#b9793f;--sun:rgba(240,196,130,.4);--b1:#b0582f;--b2:#8f6a2f;--b3:#8a4a3a;--b4:#a0683c;--m1:#b0582f;--m2:#8f6a2f;}
+:root[data-theme="ocean"]{--bg:#071a22;--card:#0f2a36;--ink:#e9f4f6;--muted:#9dbcc4;--line:#1d4150;--brand:#7fd0d6;--brand-ink:#06202a;--accent:#e6c177;--accent-ink:#2a1d05;--tag:#7fd0d6;--h1:#0e5f73;--h2:#082b38;--h3:#2a8a8f;--sun:rgba(150,225,215,.32);--b1:#0e7490;--b2:#0f766e;--b3:#2c6a8f;--b4:#4b7f94;--m1:#0e7490;--m2:#2c6a8f;}
+:root[data-theme="plum"]{--bg:#170c1c;--card:#241230;--ink:#f4ecf6;--muted:#bda9c4;--line:#3d2447;--brand:#d0a0d8;--brand-ink:#1c0b22;--accent:#e6c177;--accent-ink:#2a1d05;--tag:#d0a0d8;--h1:#6b3a6e;--h2:#2a1233;--h3:#8a4f6e;--sun:rgba(235,190,205,.32);--b1:#8a4a7a;--b2:#6b4a8a;--b3:#5a4a8a;--b4:#7a4f62;--m1:#8a4a7a;--m2:#5a4a8a;}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px);font-size:clamp(16px,.55vw + 13px,19px)}
+body{margin:0;min-height:100vh;background:radial-gradient(130% 45% at 50% 0,var(--glow,transparent),transparent 70%),var(--bg);color:var(--ink);font:400 1rem/1.5 "Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",sans-serif}
+main{max-width:30rem;margin:0 auto;padding:0 0 2rem}
+.hero{height:11rem;background:radial-gradient(circle at 85% 20%,var(--sun) 0 3.2rem,transparent 3.3rem),radial-gradient(circle at 12% 85%,rgba(255,255,255,.28) 0 2.5rem,transparent 2.6rem),linear-gradient(135deg,var(--h1),var(--h2) 50%,var(--h3));background-size:cover;background-position:center;border-radius:0 0 1.5rem 1.5rem}
+.panel{margin:-2.25rem 1rem 0;background:var(--card);border:1px solid var(--line);border-radius:1.25rem;padding:1.25rem}
+.logo{width:4.5rem;height:4.5rem;border-radius:1rem;background:var(--accent);color:var(--accent-ink);display:grid;place-items:center;font:800 1.6rem "Plus Jakarta Sans",system-ui,sans-serif;margin-top:-3.5rem;border:4px solid var(--card);overflow:hidden}
+.logo img{width:100%;height:100%;object-fit:cover}
+h1{font:800 1.75rem/1.15 "Plus Jakarta Sans",system-ui,sans-serif;margin:.75rem 0 .15rem}
+.tag{margin:0;color:var(--tag);font-weight:600}
+.desc{margin:.75rem 0 0;color:var(--muted);max-width:60ch}
+.actions{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;margin:1rem 1rem 0}
+.btn{display:flex;align-items:center;justify-content:center;gap:.55rem;min-height:3.25rem;padding:.6rem .9rem;border-radius:.9rem;border:1px solid var(--line);background:var(--card);color:var(--ink);font:600 1rem "Plus Jakarta Sans",system-ui,sans-serif;text-decoration:none;cursor:pointer}
+.btn:focus-visible{outline:3px solid var(--brand);outline-offset:2px}
+.btn svg{width:1.3rem;height:1.3rem;flex:none;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.btn.wide{grid-column:1/-1}
+.btn{color:#fff;border-color:transparent;box-shadow:0 4px 0 rgba(0,0,0,.18)}
+.btn.primary{background:var(--accent);color:var(--accent-ink)}
+.btn.c-call{background:var(--b1)}
+.btn.c-sms{background:var(--b2)}
+.btn.c-mail{background:var(--b3)}
+.btn.c-msgr{background:var(--b4)}
+.btn.maps{background:linear-gradient(90deg,var(--m1),var(--m2))}
+.btn:active{box-shadow:0 1px 0 rgba(0,0,0,.18);transform:translateY(3px)}
+.social{display:flex;flex-wrap:wrap;justify-content:center;gap:.7rem;margin:1.1rem 1rem 0}
+.social a{width:3.4rem;height:3.4rem;border-radius:50%;display:grid;place-items:center;color:#fff;box-shadow:0 4px 0 rgba(0,0,0,.18)}
+.social a:active{transform:translateY(3px);box-shadow:0 1px 0 rgba(0,0,0,.18)}
+.social a:focus-visible{outline:3px solid var(--brand);outline-offset:2px}
+.social svg{width:1.55rem;height:1.55rem;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.addr{margin:.9rem 1rem 0;color:var(--muted);font-size:.9rem;text-align:center}
+@media (min-width:700px){main{max-width:42rem}.hero{height:14rem}.actions{grid-template-columns:repeat(4,1fr)}}
+@media (min-width:1100px){main{max-width:48rem}}
+@media (max-height:480px) and (orientation:landscape){.hero{height:7rem}.panel{margin-top:-1.5rem}.logo{margin-top:-2.5rem;width:3.5rem;height:3.5rem}}
+@media (hover:hover){.btn:hover,.social a:hover{filter:brightness(1.08);transform:translateY(-2px)}}
+dialog{width:calc(100% - 2rem);max-width:28rem;border:1px solid var(--line);border-radius:1.25rem;background:var(--card);color:var(--ink);padding:1.25rem}
+dialog::backdrop{background:rgba(0,0,0,.5)}
+dialog h2{font:800 1.25rem "Plus Jakarta Sans",system-ui,sans-serif;margin:0 0 .25rem}
+dialog p{margin:0 0 .75rem;color:var(--muted);font-size:.9rem}
+.row{display:flex;justify-content:space-between;align-items:center;gap:.75rem;padding:.6rem 0;border-top:1px solid var(--line)}
+.row span{overflow-wrap:anywhere}
+.row small{display:block;color:var(--muted)}
+.row button{flex:none;min-width:4.5rem;min-height:2.5rem;border-radius:.6rem;border:1px solid var(--line);background:var(--bg);color:var(--ink);font:600 .9rem "Plus Jakarta Sans",sans-serif;cursor:pointer}
+.close{margin-top:.75rem;width:100%;background:var(--brand);color:var(--brand-ink)}
+/* glass layer */
+:root{--g-ink:#0f1f38;--g-muted:#3d4b66;--g-fill:rgba(255,255,255,.6);--g-line:rgba(255,255,255,.75);--g-shadow:0 12px 40px rgba(25,25,70,.2);--g-dlg:rgba(255,255,255,.88);}
+@media (prefers-color-scheme:dark){:root:not([data-theme]){--g-ink:#fff;--g-muted:rgba(255,255,255,.82);--g-fill:rgba(8,16,32,.42);--g-line:rgba(255,255,255,.24);--g-shadow:0 12px 40px rgba(0,0,0,.4);--g-dlg:rgba(14,22,40,.92);}}
+:root[data-theme="dark"],:root[data-theme="copper"],:root[data-theme="ocean"],:root[data-theme="plum"]{--g-ink:#fff;--g-muted:rgba(255,255,255,.82);--g-fill:rgba(8,16,32,.42);--g-line:rgba(255,255,255,.24);--g-shadow:0 12px 40px rgba(0,0,0,.4);--g-dlg:rgba(14,22,40,.92);}
+body{background:transparent;color:var(--g-ink);-webkit-tap-highlight-color:transparent}
+.bg{position:fixed;inset:0;z-index:-1;background:radial-gradient(circle at 82% 14%,var(--sun),transparent 11rem),radial-gradient(60% 45% at 15% 12%,var(--h1),transparent 75%),radial-gradient(65% 50% at 90% 55%,var(--h3),transparent 75%),radial-gradient(80% 55% at 30% 100%,var(--h2),transparent 75%),var(--h2);background-size:cover;background-position:center}
+.hero{background:none!important;height:6.5rem;border-radius:0}
+.panel{margin:0 1rem;background:var(--g-fill);-webkit-backdrop-filter:blur(24px) saturate(170%);backdrop-filter:blur(24px) saturate(170%);border:1px solid var(--g-line);border-radius:1.75rem;box-shadow:var(--g-shadow),inset 0 1px 0 rgba(255,255,255,.4)}
+.logo{border:3px solid var(--g-line);box-shadow:var(--g-shadow)}
+h1{color:var(--g-ink)}.tag{color:var(--g-ink);opacity:.92}.desc,.addr{color:var(--g-muted)}
+.btn{color:var(--g-ink);background:var(--g-fill);-webkit-backdrop-filter:blur(18px) saturate(170%);backdrop-filter:blur(18px) saturate(170%);border:1px solid var(--g-line);border-radius:1.15rem;box-shadow:var(--g-shadow),inset 0 1px 0 rgba(255,255,255,.35)}
+.btn:active{transform:scale(.97);box-shadow:var(--g-shadow)}
+.btn.c-call{background:var(--g-fill);background:color-mix(in srgb,var(--b1) 42%,var(--g-fill))}
+.btn.c-sms{background:var(--g-fill);background:color-mix(in srgb,var(--b2) 42%,var(--g-fill))}
+.btn.c-mail{background:var(--g-fill);background:color-mix(in srgb,var(--b3) 42%,var(--g-fill))}
+.btn.c-msgr{background:var(--g-fill);background:color-mix(in srgb,var(--b4) 42%,var(--g-fill))}
+.btn.primary{background:var(--accent);background:color-mix(in srgb,var(--accent) 92%,transparent);color:var(--accent-ink)}
+.btn.maps{background:var(--g-fill);background:linear-gradient(90deg,color-mix(in srgb,var(--m1) 50%,var(--g-fill)),color-mix(in srgb,var(--m2) 50%,var(--g-fill)))}
+.social a{border:1px solid rgba(255,255,255,.5);box-shadow:var(--g-shadow),inset 0 1px 0 rgba(255,255,255,.4)}
+dialog{background:var(--g-dlg);-webkit-backdrop-filter:blur(26px) saturate(170%);backdrop-filter:blur(26px) saturate(170%);border:1px solid var(--g-line);color:var(--g-ink);border-radius:1.75rem}
+dialog p,dialog small{color:var(--g-muted)}
+.row{border-color:var(--g-line)}.row button{background:transparent;color:var(--g-ink);border-color:var(--g-line)}
+dialog .close{background:var(--brand);color:var(--brand-ink);border-color:transparent;-webkit-backdrop-filter:none;backdrop-filter:none}
+.addr{display:block;width:fit-content;max-width:calc(100% - 2rem);margin:.9rem auto 0;padding:.5rem 1rem;background:var(--g-fill);-webkit-backdrop-filter:blur(18px) saturate(170%);backdrop-filter:blur(18px) saturate(170%);border:1px solid var(--g-line);border-radius:2rem;color:var(--g-ink);font-size:.9rem;box-shadow:var(--g-shadow)}
+/* photo holder + uploads */
+.hero{height:3.6rem}
+.panel{padding:.7rem}
+.panel>.logo{margin:-2.5rem 0 0 .7rem;position:relative}
+.panel h1{margin-top:.55rem}
+.panel h1,.panel .tag,.panel .desc{margin-left:.7rem;margin-right:.7rem}
+.panel .desc{margin-bottom:.5rem}
+.panel .pill{margin:0 0 .5rem .7rem}
+.photo{position:relative;aspect-ratio:16/10;border-radius:1.25rem;overflow:hidden;background:rgba(255,255,255,.12) center/cover no-repeat;border:1px solid var(--g-line);display:grid;place-items:center}
+@media (min-width:700px){.photo{aspect-ratio:16/9}}
+.ph{display:grid;justify-items:center;gap:.4rem;padding:1rem;color:var(--g-muted);font-weight:600;font-size:.9rem;text-align:center}
+.ph svg{width:2.6rem;height:2.6rem;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.photo.has .ph{display:none}
+.upl{display:grid;place-items:center;width:2.7rem;height:2.7rem;border-radius:50%;border:1px solid var(--g-line);background:var(--g-fill);color:var(--g-ink);cursor:pointer;padding:0;-webkit-backdrop-filter:blur(18px) saturate(170%);backdrop-filter:blur(18px) saturate(170%);box-shadow:var(--g-shadow)}
+.upl svg{width:1.2rem;height:1.2rem;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.upl[hidden]{display:none}
+.upl:focus-visible{outline:3px solid var(--brand,var(--gt));outline-offset:2px}
+.photo .upl{position:absolute;right:.6rem;bottom:.6rem}
+.bgup{position:fixed;top:calc(.75rem + env(safe-area-inset-top,0px));right:.75rem;z-index:5}
+</style>
+</head>
+<body>
+<div class="bg" id="bg"></div>
+<button class="upl bgup" id="upBg" type="button" aria-label="Upload background image"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg></button>
+<input type="file" id="fBg" accept="image/*" hidden>
+<main>
+  <div class="hero" id="hero"></div>
+  <section class="panel">
+    <div class="photo" id="photo">
+      <div class="ph" id="ph"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg><span>Your photo goes here</span></div>
+      <button class="upl" id="upPhoto" type="button" aria-label="Upload photo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></button>
+      <input type="file" id="fPhoto" accept="image/*" hidden>
+    </div>
+    <div class="logo" id="logo"></div>
+    <h1 id="name"></h1>
+    <p class="tag" id="tagline"></p>
+    <p class="desc" id="desc"></p>
+  </section>
+
+  <nav class="actions" aria-label="Quick actions">
+    <button class="btn primary wide" id="save" type="button">
+      <svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6M22 11h-6"/></svg>Save contact</button>
+    <a class="btn c-call" id="call" href="#"><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>Call</a>
+    <a class="btn c-sms" id="sms" href="#"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>Text</a>
+    <a class="btn c-mail" id="mail" href="#"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>Email</a>
+    <a class="btn c-msgr" id="msgr" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 3C6.9 3 3 6.8 3 11.5c0 2.6 1.2 4.9 3.1 6.4V21l3-1.7c.9.3 1.9.4 2.9.4 5.1 0 9-3.800 9-8.200S17.100 3 12 3z"/><path d="m7.500 13.500 3.200-3.400 2 2 3.300-2.600"/></svg>Messenger</a>
+    <a class="btn maps wide" id="maps" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>Open in Google Maps</a>
+  </nav>
+  <p class="addr" id="addr"></p>
+  <div class="social" id="social"></div>
+</main>
+
+<dialog id="sheet" aria-labelledby="sheetTitle">
+  <h2 id="sheetTitle">Save contact</h2>
+  <p>Tap Copy, then paste into a new contact.</p>
+  <div id="rows"></div>
+  <button class="btn close" id="closeSheet" type="button">Done</button>
+</dialog>
+
+<script>
+/* ===== EDIT THIS BLOCK ONLY ===== */
+const CONFIG = {
+  name: "Your Business Name",
+  tagline: "What you do, in a few words",
+  description: "One or two short sentences about your establishment, what you offer and when you are open.",
+  phone: "+639171234567",          // international format
+  email: "hello@example.com",
+  messenger: "yourpage",           // text after m.me/ or facebook.com/
+  address: "Street, Barangay, Town, Province",
+  mapsQuery: "Your Business Name, Town, Province", // or paste your full Google Maps share link below
+  mapsLink: "",
+  headerImage: "",                 // background picture: a link or data: URI
+  photo: "",                       // big photo on top: a link or data: URI
+  allowUpload: true,               // set to false to hide the upload buttons
+  logoImage: "",                   // optional: a data: URI
+  theme: "light",                   // auto, light, dark, copper, ocean, or plum
+  // Social accounts: paste a full link or just the username. Leave "" to hide a button.
+  social: {
+    facebook: "yourpage",
+    instagram: "yourhandle",
+    tiktok: "yourhandle",
+    youtube: "",
+    website: ""
+  }
+};
+/* ================================ */
+const $ = id => document.getElementById(id);
+$("name").textContent = CONFIG.name;
+document.title = CONFIG.name;
+$("tagline").textContent = CONFIG.tagline;
+$("desc").textContent = CONFIG.description;
+$("addr").textContent = CONFIG.address;
+if (CONFIG.headerImage) $("bg").style.backgroundImage = "url('" + CONFIG.headerImage + "')";
+if (CONFIG.logoImage) { const i = document.createElement("img"); i.src = CONFIG.logoImage; i.alt = ""; $("logo").appendChild(i); }
+else $("logo").textContent = CONFIG.name.split(/\s+/).slice(0,2).map(w => w[0]).join("").toUpperCase();
+$("call").href = "tel:" + CONFIG.phone;
+$("sms").href = "sms:" + CONFIG.phone;
+$("mail").href = "mailto:" + CONFIG.email;
+$("msgr").href = "https://m.me/" + encodeURIComponent(CONFIG.messenger);
+$("maps").href = CONFIG.mapsLink || "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(CONFIG.mapsQuery);
+
+const SOCIAL = {
+  facebook: {label:"Facebook", bg:"#1877f2", base:"https://facebook.com/", icon:'<path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>'},
+  instagram: {label:"Instagram", bg:"linear-gradient(45deg,#f9a825,#e1306c 55%,#833ab4)", base:"https://instagram.com/", icon:'<rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/>'},
+  tiktok: {label:"TikTok", bg:"#111", base:"https://tiktok.com/@", icon:'<path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/>'},
+  youtube: {label:"YouTube", bg:"#e62117", base:"https://youtube.com/@", icon:'<path d="M2.5 17a24.1 24.1 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.6 49.6 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.1 24.1 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.6 49.6 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><path d="m10 15 5-3-5-3z"/>'},
+  website: {label:"Website", bg:"#475569", base:"https://", icon:'<circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>'}
+};
+Object.keys(SOCIAL).forEach(k => {
+  const v = (CONFIG.social && CONFIG.social[k] || "").trim();
+  if (!v) return;
+  const d = SOCIAL[k];
+  const a = document.createElement("a");
+  a.href = /^https?:\/\//i.test(v) ? v : d.base + v.replace(/^@/, "");
+  a.target = "_blank"; a.rel = "noopener"; a.style.background = d.bg;
+  a.setAttribute("aria-label", d.label); a.title = d.label;
+  a.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true">' + d.icon + '</svg>';
+  $("social").appendChild(a);
+});
+
+const items = [["Name", CONFIG.name], ["Phone", CONFIG.phone], ["Email", CONFIG.email], ["Address", CONFIG.address]];
+const rows = $("rows");
+items.forEach(([label, value]) => {
+  const r = document.createElement("div"); r.className = "row";
+  const s = document.createElement("span"); const sm = document.createElement("small");
+  sm.textContent = label; s.appendChild(sm); s.appendChild(document.createTextNode(value));
+  const b = document.createElement("button"); b.type = "button"; b.textContent = "Copy";
+  b.onclick = async () => {
+    try { await navigator.clipboard.writeText(value); b.textContent = "Copied"; }
+    catch (e) { const range = document.createRange(); range.selectNodeContents(s); const sel = getSelection(); sel.removeAllRanges(); sel.addRange(range); b.textContent = "Selected"; }
+    setTimeout(() => b.textContent = "Copy", 1500);
+  };
+  r.appendChild(s); r.appendChild(b); rows.appendChild(r);
+});
+$("save").onclick = () => $("sheet").showModal();
+$("closeSheet").onclick = () => $("sheet").close();
+let tintRGB = null;
+const hexRGB = h => { h = (h || "").trim(); if (/^#[0-9a-f]{3}$/i.test(h)) h = "#" + h[1] + h[1] + h[2] + h[2] + h[3] + h[3]; const m = /^#([0-9a-f]{6})$/i.exec(h); return m ? [0, 2, 4].map(i => parseInt(m[1].substr(i, 2), 16)) : null; };
+function hueSat(c) { const r = c[0] / 255, g = c[1] / 255, b = c[2] / 255, mx = Math.max(r, g, b), mn = Math.min(r, g, b), d = mx - mn, l = (mx + mn) / 2; let h = 0; if (d) { h = mx === r ? ((g - b) / d) % 6 : mx === g ? (b - r) / d + 2 : (r - g) / d + 4; h = Math.round(h * 60); if (h < 0) h += 360; } return [h, d ? Math.round(d / (1 - Math.abs(2 * l - 1)) * 100) : 0]; }
+function applyTint() {
+  const cs = getComputedStyle(document.documentElement);
+  const c = tintRGB || hexRGB(cs.getPropertyValue("--h2")); if (!c) return;
+  const k = hexRGB(cs.getPropertyValue("--card")), dark = k ? (0.2126 * k[0] + 0.7152 * k[1] + 0.0722 * k[2]) < 110 : false;
+  const t = hueSat(c), h = t[0], s = Math.min(Math.max(t[1], 35), 70);
+  document.documentElement.style.setProperty("--bg", "hsl(" + h + " " + Math.min(s, dark ? 45 : 60) + "% " + (dark ? 9 : 95) + "%)");
+  document.documentElement.style.setProperty("--glow", "hsl(" + h + " " + s + "% " + (dark ? 38 : 62) + "% / " + (dark ? 0.5 : 0.35) + ")");
+}
+if (CONFIG.headerImage) {
+  const im = new Image();
+  im.onload = () => { try {
+    const cv = document.createElement("canvas"); cv.width = cv.height = 24;
+    const cx = cv.getContext("2d"); cx.drawImage(im, 0, 0, 24, 24);
+    const d = cx.getImageData(0, 0, 24, 24).data; let r = 0, g = 0, b = 0, w = 0;
+    for (let i = 0; i < d.length; i += 4) { const wt = 0.1 + (Math.max(d[i], d[i+1], d[i+2]) - Math.min(d[i], d[i+1], d[i+2])) / 255; r += d[i] * wt; g += d[i+1] * wt; b += d[i+2] * wt; w += wt; }
+    tintRGB = [r / w, g / w, b / w]; applyTint();
+  } catch (e) {} };
+  im.src = CONFIG.headerImage;
+}
+if (CONFIG.theme !== "auto") document.documentElement.setAttribute("data-theme", CONFIG.theme);
+applyTint();
+/* photo and background upload */
+(function () {
+  const key = k => "cardimg:" + location.pathname + ":" + k;
+  const get = k => { try { return localStorage.getItem(key(k)); } catch (e) { return null; } };
+  const put = (k, v) => { try { localStorage.setItem(key(k), v); } catch (e) {} };
+  const setPhoto = src => { if (!src) return; const el = $("photo"); el.style.backgroundImage = "url('" + src + "')"; el.classList.add("has"); };
+  const setBg = src => { if (src) $("bg").style.backgroundImage = "url('" + src + "')"; };
+  setPhoto(get("photo") || CONFIG.photo);
+  setBg(get("bg"));
+  function shrink(file, max, done) {
+    const fr = new FileReader();
+    fr.onload = () => {
+      const im = new Image();
+      im.onload = () => {
+        const r = Math.min(1, max / Math.max(im.width, im.height)), c = document.createElement("canvas");
+        c.width = Math.round(im.width * r); c.height = Math.round(im.height * r);
+        const x = c.getContext("2d"); x.fillStyle = "#fff"; x.fillRect(0, 0, c.width, c.height); x.drawImage(im, 0, 0, c.width, c.height);
+        done(c.toDataURL("image/jpeg", 0.85));
+      };
+      im.src = fr.result;
+    };
+    fr.readAsDataURL(file);
+  }
+  function wire(btn, inp, name, max, apply) {
+    $(btn).onclick = () => $(inp).click();
+    $(inp).onchange = () => { const f = $(inp).files && $(inp).files[0]; if (!f) return; shrink(f, max, d => { apply(d); put(name, d); $(inp).value = ""; }); };
+  }
+  wire("upPhoto", "fPhoto", "photo", 1400, setPhoto);
+  wire("upBg", "fBg", "bg", 1800, setBg);
+  if (CONFIG.allowUpload === false) document.querySelectorAll(".upl").forEach(e => { e.hidden = true; });
+})();
+</script>
+</body>
+</html>
